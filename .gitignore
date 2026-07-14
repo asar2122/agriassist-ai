@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+.venv/
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.pytest_cache/
+.streamlit/
+
+# Large Disease Dataset
+data/disease_dataset/
+
+# FAISS Generated Files
+vector_database/faiss_index/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary Files
+debug_retrieval.py
+test_disease_dataset.py
+test_disease_prediction.py

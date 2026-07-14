@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+scikit-learn
+pytest
+PyMuPDF
+sentence-transformers
+faiss-cpu
+torch
+torchvision
+Pillow
+joblib
+requests
