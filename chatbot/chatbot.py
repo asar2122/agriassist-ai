@@ -1,5 +1,5 @@
 from chatbot.intent_classifier import IntentClassifier
-from chatbot.ollama_client import OllamaClient
+from chatbot.llm_client import LLMClient
 from chatbot.prompt_builder import PromptBuilder
 from chatbot.query_router import QueryRouter
 
@@ -16,13 +16,16 @@ class AgriChatbot:
 
         self.retriever = AgricultureRetriever()
 
-        self.ollama_client = OllamaClient()
+        self.llm_client = LLMClient()
 
     def get_response(self, user_question):
 
         if not user_question.strip():
+
             return {
-                "answer": "Please enter an agriculture question.",
+                "answer": (
+                    "Please enter an agriculture question."
+                ),
                 "sources": [],
                 "intent": "general",
             }
@@ -31,7 +34,9 @@ class AgriChatbot:
             user_question
         )
 
-        route = self.query_router.route(intent)
+        route = self.query_router.route(
+            intent
+        )
 
         if route == "rag":
 
@@ -52,12 +57,18 @@ class AgriChatbot:
             }
 
         return {
-            "answer": "Unable to process the question.",
+            "answer": (
+                "Unable to process the question."
+            ),
             "sources": [],
             "intent": intent,
         }
 
-    def _rag_response(self, question, intent):
+    def _rag_response(
+        self,
+        question,
+        intent,
+    ):
 
         results = self.retriever.retrieve(
             question=question,
@@ -69,8 +80,9 @@ class AgriChatbot:
 
             return {
                 "answer": (
-                    "I could not find sufficient information "
-                    "in the local agriculture knowledge base."
+                    "I could not find sufficient "
+                    "information in the local "
+                    "agriculture knowledge base."
                 ),
                 "sources": [],
                 "intent": intent,
@@ -84,14 +96,16 @@ class AgriChatbot:
                 result["text"]
             )
 
-        context = "\n\n".join(context_parts)
+        context = "\n\n".join(
+            context_parts
+        )
 
         prompt = PromptBuilder.build_prompt(
             question=question,
             context=context,
         )
 
-        answer = self.ollama_client.generate(
+        answer = self.llm_client.generate(
             prompt
         )
 
@@ -106,7 +120,10 @@ class AgriChatbot:
             }
 
             if source not in sources:
-                sources.append(source)
+
+                sources.append(
+                    source
+                )
 
         return {
             "answer": answer,

@@ -114,7 +114,7 @@ def main():
     st.title("🌱 AgriAssist AI")
 
     st.write(
-        "Offline Smart Agriculture Assistant"
+        "AI-Powered Smart Agriculture Assistant"
     )
 
     menu = st.sidebar.selectbox(
@@ -164,10 +164,10 @@ def chatbot_page():
         "🤖 Agriculture Chatbot"
     )
 
-    st.caption(
-        "Answers are generated from the local "
-        "agriculture knowledge base."
-    )
+    st.write(
+    "Answers are generated using agriculture "
+    "knowledge retrieval and cloud AI."
+)
 
     user_question = st.chat_input(
         "Ask an agriculture question..."
