@@ -4,8 +4,7 @@ from disease_detection.predict import DiseasePredictor
 
 
 TEST_IMAGE_PATH = Path(
-    "data/disease_dataset/Leaf Blast/"
-    "aug_0_3.jpg"
+    "tests/test_data/leaf_blast.jpg"
 )
 
 
