@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
-
+from pathlib import Path
 from PIL import Image
 
 
 from chatbot.chatbot import AgriChatbot
+from scripts.build_vector_database import build_vector_database
 from crop_recommendation.predict import CropPredictor
 from fertilizer_recommendation.predict import FertilizerPredictor
 from disease_detection.predict import DiseasePredictor
@@ -41,6 +42,26 @@ initialize_database()
 
 @st.cache_resource
 def load_chatbot():
+
+    index_path = Path(
+        "vector_database/faiss_index/agriassist.index"
+    )
+
+    metadata_path = Path(
+        "vector_database/faiss_index/metadata.json"
+    )
+
+    if (
+        not index_path.exists()
+        or not metadata_path.exists()
+    ):
+
+        with st.spinner(
+            "Preparing agriculture knowledge base..."
+        ):
+
+            build_vector_database()
+
     return AgriChatbot()
 
 
