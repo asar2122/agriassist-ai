@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "text": "Rice Cultivation Guide Rice cultivation is the process of growing and harvesting rice crops. The main steps in rice cultivation include land preparation, seed selection, sowing or transplanting, irrigation management, nutrient management, weed control, pest and disease management, and harvesting. Land preparation is performed before planting to prepare suitable soil conditions for rice growth. Farmers select suitable rice seeds or varieties according to local climate, soil conditions, and agricultural recommendations. Rice can be established through methods such as direct sowing or transplanting, depending on the production system. Water and irrigation should be managed according to the rice growth stage, soil conditions, climate, and local agricultural recommendations. Nutrient management is important for healthy crop growth. Fertilizer recommendations should be based on soil conditions and locally approved agricultural guidance. Farmers should monitor rice crops for weeds, pests, and diseases during the growing period. Rice is harvested when the crop reaches the appropriate maturity stage. The exact cultivation practices depend on the rice variety, soil type, climate, water availability, and local agricultural recommendations.",
+    "source": "data\\knowledge_base\\crop_guides\\rice_cultivation.txt",
+    "file_name": "rice_cultivation.txt",
+    "page": null,
+    "chunk_number": 0
+  },
+  {
+    "id": 1,
+    "text": "Rice Blast Disease Rice blast is a fungal disease affecting rice crops. Symptoms include spindle-shaped lesions on rice leaves. The lesions may have gray or white centers with brown or reddish borders. The disease may affect leaves, nodes, collars, and panicles. Management practices include using resistant rice varieties, maintaining balanced fertilizer application, avoiding excessive nitrogen application, and following appropriate field sanitation practices. Farmers should follow locally approved agricultural recommendations when selecting fungicides or other plant protection products.",
+    "source": "data\\knowledge_base\\disease_guides\\rice_diseases.txt",
+    "file_name": "rice_diseases.txt",
+    "page": null,
+    "chunk_number": 0
+  }
+]
