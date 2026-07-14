@@ -25,6 +25,49 @@ The system provides the following features:
 - Chat history storage
 - Automated testing
 
+
+---
+
+## 📸 Application Screenshots
+
+### 🤖 Agriculture Chatbot
+
+The RAG-based agriculture chatbot answers agriculture-related questions using a local knowledge base, FAISS vector search, Sentence Transformer embeddings, and Ollama.
+
+![Agriculture Chatbot](screenshots/chatbot.png)
+
+---
+
+### 🌾 Crop Recommendation
+
+The crop recommendation system predicts a suitable crop based on soil nutrients and environmental conditions using a locally trained Random Forest Classifier.
+
+![Crop Recommendation](screenshots/crop-recommendation.png)
+
+---
+
+### 💊 Fertilizer Recommendation
+
+The fertilizer recommendation system suggests a suitable fertilizer based on environmental conditions, soil nutrients, soil type, and crop type.
+
+![Fertilizer Recommendation](screenshots/fertilizer-recommendation.png)
+
+---
+
+### 🦠 Rice Disease Detection
+
+The rice disease detection system uses a ResNet18 deep learning model to classify uploaded rice leaf images into six supported categories.
+
+![Rice Disease Detection](screenshots/disease-detection.png)
+
+---
+
+### 💰 Market Price Estimation
+
+The market price estimation system uses a locally trained Random Forest Regressor to estimate the modal market price based on commodity and market information.
+
+![Market Price Estimation](screenshots/market-prediction.png)
+
 ---
 
 ## ✨ Features
@@ -181,10 +224,10 @@ Best Validation Accuracy: 85.49%
 
 The Streamlit interface displays:
 
+- Uploaded rice leaf image
 - Predicted disease
 - Prediction confidence
-- Model information
-- Number of supported classes
+- Disease classification status
 
 ---
 
@@ -365,6 +408,12 @@ agriassist-ai/
 │   ├── __init__.py
 │   ├── document_loader.py
 │   └── ...
+├── screenshots/
+│   ├── chatbot.png
+│   ├── crop-recommendation.png
+│   ├── fertilizer-recommendation.png
+│   ├── disease-detection.png
+│   └── market-prediction.png
 │
 ├── scripts/
 │   └── build_vector_database.py
@@ -405,7 +454,7 @@ agriassist-ai/
 ### 1. Clone the Repository
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone https://github.com/asar2122/agriassist-ai.git
 ```
 
 Move into the project directory:
