@@ -59,14 +59,9 @@ def load_chatbot():
         with st.spinner(
             "Preparing agriculture knowledge base..."
         ):
-
             build_vector_database()
 
     return AgriChatbot()
-
-
-chatbot = load_chatbot()
-
 
 # --------------------------------------------------
 # LOAD CROP RECOMMENDATION MODEL
@@ -181,14 +176,16 @@ def main():
 
 def chatbot_page():
 
+    chatbot = load_chatbot()
+
     st.header(
         "🤖 Agriculture Chatbot"
     )
 
     st.write(
-    "Answers are generated using agriculture "
-    "knowledge retrieval and cloud AI."
-)
+        "Answers are generated using agriculture "
+        "knowledge retrieval and cloud AI."
+    )
 
     user_question = st.chat_input(
         "Ask an agriculture question..."
@@ -196,16 +193,8 @@ def chatbot_page():
 
     if user_question:
 
-        # Display user message
-
         with st.chat_message("user"):
-
-            st.write(
-                user_question
-            )
-
-
-        # Generate and display chatbot response
+            st.write(user_question)
 
         with st.chat_message("assistant"):
 
@@ -217,23 +206,14 @@ def chatbot_page():
                     user_question
                 )
 
-
-            # Display chatbot answer
-
             st.write(
                 response["answer"]
             )
-
-
-            # Display simple knowledge-base information
 
             st.caption(
                 "Answer generated from the local "
                 "agriculture knowledge base."
             )
-
-
-        # Save conversation to SQLite
 
         save_message(
             user_message=user_question,
